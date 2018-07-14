@@ -1,0 +1,112 @@
+@charset "utf-8";
+@import url("reset.css");
+
+/**
+* 共通
+*/
+* {
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+    text-align: center;
+    color: #000000db;
+    /* font-size: 16px; */
+}
+
+body {
+  font-size: 12px;
+}
+
+h1{
+  font-size: 1.3rem;
+}
+
+h2{
+  font-size: 1.2rem;
+}
+
+h3{
+  font-size: 1.1rem;
+}
+
+
+h1, h2, h3{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+h1:before, h2:before, h3:before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  display: inline-block;
+  width: 10px;
+  height: 1.5px;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #000000db;
+  border-radius: 3px;
+  animation-name: anime1;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function:ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anime1 {
+    from {
+        width: 10px;
+    }
+    to {
+        width: 300px;
+    }
+}
+
+date {
+  font-size: 0.5em;
+}
+
+.rwddiv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 0.1em;
+  border: 0px solid #cdc9c9;
+  padding: 0.0em;
+  
+}
+
+.rwddiv > div {
+  background: #cdc9c9;
+  overflow: auto;
+  min-width: 0;
+  padding: 0em;
+  cursor: pointer;
+  border-radius: 10px 10px;
+  margin: 3px;
+}
+
+footer{
+    font-size: 80%;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #cdc9c9;
+} 
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+　font-size: 0.8em;
+　font-weight: normal;
+　overflow-x : auto;
+}
+
+

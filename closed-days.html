@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+<title>休業日の設定</title>
+<meta name="description" content="休業日の設定フォームのサンプル">
+<meta name="keywords" content="html5,js,休業日,お休みの日">
+<link rel="stylesheet" href="./css/main.css?v=1">
+<link rel="stylesheet" href="./css/table.css?v=1">
+<!-- <script src="./js/jquery-3.3.1.js"></script> -->
+<script src="./js/closeday.js?v=1"></script>
+</head>
+<body>
+<header>
+  <h1>休業日の設定フォームサンプル</h1>
+  <p>休業日って不定だったり、隔週だったりでシステムで判断できる設定フォームが難しかったりします。<br />
+  複雑な休業日をシステム的に管理するサンプルフォームをご紹介。<br />
+  考え方としては、第一週は必ずn月1日～n月7日になると考えて、隔週なのか・第ｎ週なのか等の判断をロジックで行います。<br />
+  日本の習慣では、8/1が金曜日の場合、8/1～8/2を第１週ととらえる事がありますが誤りです。<br />
+  <p><i>モダンブラウザのみ対応。マークアップやデザインは修正予定。</i>
+</header>
+
+<article class="main-content">
+  <form>
+
+    <div style="margin:15px;">
+      <table class="brwsr2">
+        <caption>曜日毎の営業時間を設定</caption>
+        <tr>
+          <th>日曜日</th>
+          <td class="data fst"><input type="time" id="sun-start-time" value="09:00:00" step="900">～
+          <input type="time" id="sun-end-time" value="20:00:00" step="900"></td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="2"></td>
+        </tr>
+        <tr>
+          <th>月曜日</th>
+          <td class="data fst"><input type="time" id="mon-start-time" value="09:00:00" step="900">～
+          <input type="time" id="mon-end-time" value="20:00:00" step="900"></td>
+        </tr>
+         <tr>
+          <td class="bar" colspan="2"></td>
+        </tr>
+        <tr>
+          <th>火曜日</th>
+          <td class="data fst"><input type="time" id="tue-start-time" value="09:00:00" step="900">～
+          <input type="time" id="tue-end-time" value="20:00:00" step="900"></td>
+        </tr>
+         <tr>
+          <td class="bar" colspan="2"></td>
+        </tr>
+        <tr>
+          <th>水曜日</th>
+          <td class="data fst"><input type="time" id="wed-start-time" value="09:00:00" step="900">～
+          <input type="time" id="wed-end-time" value="20:00:00" step="900"></td>
+        </tr>
+         <tr>
+          <td class="bar" colspan="2"></td>
+        </tr>
+        <tr>
+          <th>木曜日</th>
+          <td class="data fst"><input type="time" id="thu-start-time" value="09:00:00" step="900">～
+          <input type="time" id="thu-end-time" value="20:00:00" step="900"></td>
+        </tr>
+         <tr>
+          <td class="bar" colspan="2"></td>
+        </tr>
+        <tr>
+          <th>金曜日</th>
+          <td class="data fst"><input type="time" id="fri-start-time" value="09:00:00" step="900">～
+          <input type="time" id="fri-end-time" value="20:00:00" step="900"></td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="2"></td>
+        </tr>
+        <tr>
+          <th>土曜日</th>
+          <td class="data fst"><input type="time" id="sat-start-time" value="09:00:00" step="900">～
+          <input type="time" id="sat-end-time" value="20:00:00" step="900"></td>
+        </tr>
+      </table>
+   </div>
+
+   <div style="margin:15px;">
+      <table class="brwsr2">
+        <caption>休業曜日を設定</caption>
+        <tr>
+          <th></th>
+          <td class="data fst">日</td>
+          <td class="data">月</td>
+          <td class="data">火</td>
+          <td class="data">水</td>
+          <td class="data">木</td>
+          <td class="data">金</td>
+          <td class="data">土</td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="8"></td>
+        </tr>
+        <tr>
+          <th>1週(1日～7日)</th>
+          <td class="data fst"><input type="checkbox" id="sun-week-1" value="test"></td>
+          <td class="data"><input type="checkbox" id="mon-week-1"></td>
+          <td class="data"><input type="checkbox" id="tue-week-1"></td>
+          <td class="data"><input type="checkbox" id="wed-week-1"></td>
+          <td class="data"><input type="checkbox" id="thu-week-1"></td>
+          <td class="data"><input type="checkbox" id="fri-week-1"></td>
+          <td class="data"><input type="checkbox" id="sat-week-1"></td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="8"></td>
+        </tr>
+        <tr>
+          <th>2週(8日～14日)</th>
+          <td class="data fst"><input type="checkbox" id="sun-week-2"></td>
+          <td class="data"><input type="checkbox" id="mon-week-2"></td>
+          <td class="data"><input type="checkbox" id="tue-week-2"></td>
+          <td class="data"><input type="checkbox" id="wed-week-2"></td>
+          <td class="data"><input type="checkbox" id="thu-week-2"></td>
+          <td class="data"><input type="checkbox" id="fri-week-2"></td>
+          <td class="data"><input type="checkbox" id="sat-week-2"></td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="8"></td>
+        </tr>
+        <tr>
+          <th>3週(15日～21日)</th>
+          <td class="data fst"><input type="checkbox" id="sun-week-3"></td>
+          <td class="data"><input type="checkbox" id="mon-week-3"></td>
+          <td class="data"><input type="checkbox" id="tue-week-3"></td>
+          <td class="data"><input type="checkbox" id="wed-week-3"></td>
+          <td class="data"><input type="checkbox" id="thu-week-3"></td>
+          <td class="data"><input type="checkbox" id="fri-week-3"></td>
+          <td class="data"><input type="checkbox" id="sat-week-3"></td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="8"></td>
+        </tr>
+        <tr>
+          <th>4週(22日～28日)</th>
+          <td class="data fst"><input type="checkbox" id="sun-week-4"></td>
+          <td class="data"><input type="checkbox" id="mon-week-4"></td>
+          <td class="data"><input type="checkbox" id="tue-week-4"></td>
+          <td class="data"><input type="checkbox" id="wed-week-4"></td>
+          <td class="data"><input type="checkbox" id="thu-week-4"></td>
+          <td class="data"><input type="checkbox" id="fri-week-4"></td>
+          <td class="data"><input type="checkbox" id="sat-week-4"></td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="8"></td>
+        </tr>
+        <tr>
+          <th>5週(29日～)</th>
+          <td class="data fst"><input type="checkbox" id="sun-week-5"></td>
+          <td class="data"><input type="checkbox" id="mon-week-5"></td>
+          <td class="data"><input type="checkbox" id="tue-week-5"></td>
+          <td class="data"><input type="checkbox" id="wed-week-5"></td>
+          <td class="data"><input type="checkbox" id="thu-week-5"></td>
+          <td class="data"><input type="checkbox" id="fri-week-5"></td>
+          <td class="data"><input type="checkbox" id="sat-week-5"></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div style="margin:15px;">
+      <table class="brwsr2">
+        <caption>その他の休業日を設定</caption>
+        <tr>
+          <th>休業日1</th>
+          <td class="data fst"><input type="date" id="other1"></td>
+        </tr>
+        <tr>
+          <td class="bar" colspan="2"></td>
+        </tr>
+        <tr>
+          <th>休業日2</th>
+          <td class="data fst"><input type="date" id="other2"></td>
+        </tr>
+      </table>
+    </div>
+
+    <button type=button id="checkButton" onclick="closedCheck()")>休業日算出</button>
+
+    <div style="margin:15px;">
+      <textarea id="result" cols="50" rows="10" placeholder="ここに算出結果が表示されます。" readonly></textarea>
+    </div>
+  </form>
+</article>
+
+
+
+
+
+
+<footer>
+  <p>&copy;Sugars182.Inc
+</footer>
+</body>
+</html>
