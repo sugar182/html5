@@ -5,13 +5,14 @@
 * 共通
 */
 * {
-    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
-    text-align: center;
-    color: #000000db;
+
     /* font-size: 16px; */
 }
 
 body {
+  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+  text-align: center;
+  color: #000000db;
   font-size: 12px;
 }
 
@@ -102,7 +103,8 @@ date {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #95b3c0;
+    color: #dad9d9;
+    background-color: #141415;
 } 
 
 
