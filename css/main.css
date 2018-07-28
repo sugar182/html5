@@ -78,7 +78,7 @@ date {
 
 .rwddiv {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-auto-rows: 1fr;
   grid-gap: 0.1em;
   border: 0px solid #95b3c0;
@@ -100,9 +100,11 @@ date {
 .footer-area {
     font-size: 80%;
     width: 100%;
+    height: 100px;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    text-vertical-align: middle;
+    line-height: 100px;
+    padding: 0 0 0 0;
     color: #dad9d9;
     background-color: #141415;
 } 
